@@ -1,0 +1,42 @@
+<Window x:Class="TurboCore.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TurboCore - Ativação"
+        Height="420" Width="380"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Border Background="{StaticResource BgBrush}" CornerRadius="16" BorderBrush="{StaticResource AccentBrush}" BorderThickness="1">
+        <Grid Margin="28">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="TURBOCORE" Style="{StaticResource TitleText}"
+                       Foreground="{StaticResource AccentBrush}" FontSize="26"/>
+            <TextBlock Grid.Row="1" Text="Insere a tua key de ativação" Style="{StaticResource SubText}" Margin="0,4,0,20"/>
+
+            <TextBox Grid.Row="2" x:Name="KeyInput" Style="{StaticResource KeyTextBox}"
+                     Text="TURBO-XXXX-XXXX-XXXX" GotFocus="KeyInput_GotFocus"/>
+
+            <TextBlock Grid.Row="3" x:Name="StatusText" Margin="0,12,0,0" TextWrapping="Wrap"
+                       Foreground="#FF6B6B" FontSize="12"/>
+
+            <Button Grid.Row="4" x:Name="ActivateButton" Content="Ativar" Style="{StaticResource PrimaryButton}"
+                    Margin="0,20,0,0" Click="ActivateButton_Click"/>
+
+            <StackPanel Grid.Row="5" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <TextBlock Text="Ainda não tens uma key? " Style="{StaticResource SubText}" FontSize="11"/>
+                <TextBlock Text="Compra no nosso Discord" Foreground="{StaticResource Accent2Brush}" FontSize="11"
+                           Cursor="Hand" MouseLeftButtonUp="DiscordLink_Click" TextDecorations="Underline"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
